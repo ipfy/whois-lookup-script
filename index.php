@@ -1,6 +1,5 @@
 <?php
 $domain = $_GET['domain'];
-// For the full list of TLDs/Whois servers see http://www.iana.org/domains/root/db/ and http://www.whois365.com/en/listtld/
 $whoisservers = array(
   "ac" => "whois.nic.ac", // Ascension Island
   // ad - Andorra - no whois server assigned
