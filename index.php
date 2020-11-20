@@ -365,21 +365,28 @@ function QueryWhoisServer($whoisserver, $domain) {
 <link rel="canonical" href="https://whois.ipfy.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
 <meta name="theme-color" content="#563d7c">
-<style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}@media (min-width:768px){.bd-placeholder-img-lg{font-size:3.5rem}}.container{width:auto;max-width:80%;padding:0 15px}.footer{background-color:#f5f5f5}pre{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}</style>
+<style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}@media (min-width:768px){.bd-placeholder-img-lg{font-size:3.5rem}}.container{width:auto;max-width:80%;padding:0 15px}.footer{background-color:#f5f5f5}pre{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.grecaptcha-badge {visibility: hidden;}</style>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("whois-form").submit();
+       }
+     </script>
+<link rel=icon href=https://cdn.ipfy.in/wp-content/uploads/2020/05/cropped-ipfy-website-favicon-32x32.png sizes=32x32><link rel=icon href=https://cdn.ipfy.in/wp-content/uploads/2020/05/cropped-ipfy-website-favicon-192x192.png sizes=192x192><link rel=apple-touch-icon href=https://cdn.ipfy.in/wp-content/uploads/2020/05/cropped-ipfy-website-favicon-180x180.png><meta name=msapplication-TileImage content=https://cdn.ipfy.in/wp-content/uploads/2020/05/cropped-ipfy-website-favicon-270x270.png>
 </head>
 <body class="d-flex flex-column h-100">
 <main role="main" class="flex-shrink-0">
 <div class="container">
 <h1 class="mt-5">Domain / IP Address Lookup</h1>
 <p class="lead">Find the whois records for domain name or an IP address. <a href="https://www.ipfy.com/domains/">Register / Transfer Domains</a></p>
-<form action="<?=$_SERVER['PHP_SELF'];?>">
+<form id='whois-form' action="<?=$_SERVER['PHP_SELF'];?>">
   <div class="form-row align-items-center">
     <div class="col-6">
       <label class="sr-only" for="domain">Domain/IP Address:</label>
       <input type="text" class="form-control mb-2" name="domain" placeholder="Domain Name / IP Address" id="domain" value="<?=$domain;?>">
     </div>
     <div class="col">
-      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      <button data-sitekey="6LfruIIUAAAAAIobHdozh_kGcl7DdP3sxFWYKrUG" data-callback='onSubmit' type="submit" class="btn btn-primary mb-2 g-recaptcha">Submit</button>
     </div>
   </div>
 </form>
@@ -403,7 +410,7 @@ if($domain) {
 </main>
 <footer class="footer mt-auto py-3">
 <div class="container">
-<span class="text-muted">&copy 2020 Ipfy Enterprise Pvt. Ltd. All Rights Reserved. Ipfy is a .IN Accredited Registrar.</span>
+<span class="text-muted">&copy 2020 Ipfy Enterprise Pvt. Ltd. All Rights Reserved. Ipfy is a .IN Accredited Registrar.</span><br><small>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply along with Ipfy's <a href="https://www.ipfy.com/legal/privacy/" target="_blank">privacy policy</a> & <a href="https://www.ipfy.com/legal/" target="_blank">Terms Of Service</a>.</small>
 </div>
 </footer>
 </body>
